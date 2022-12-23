@@ -1,0 +1,22 @@
+# @package model.common
+
+in_features: ${model.common_dim}
+
+# boolean options controlling future predictor and classifier
+share_classifiers: true  # whether a common classifier should be used
+share_predictors: false  # whether a common future predictor should be used
+modality_cls: false  # whether modality-wise classification
+fusion_cls: true  # whether the fused features should be classified
+
+# backbones (identity layer for feature vectors)
+backbones: null
+
+# for base future predictor
+fp_output_len: 1
+fp_inter_dim: 2048
+fp_layers: 6
+fp_heads: 4
+fp_output_attentions: false
+embd_pdrop: 0.1
+resid_pdrop: 0.1
+attn_pdrop: 0.1

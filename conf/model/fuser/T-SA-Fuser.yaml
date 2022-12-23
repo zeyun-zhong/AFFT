@@ -1,0 +1,12 @@
+_target_: models.fusion.TemporalCMFuser
+dim: ${model.common.in_features}
+depth: 6
+num_heads: 4
+embd_drop_rate: 0.1
+drop_rate: 0.1
+attn_drop_rate: 0.1
+drop_path_rate: 0.1
+modalities: ${model.modal_dims}
+modal_encoding: true
+frame_level_token: false
+temporal_sequence_length: null

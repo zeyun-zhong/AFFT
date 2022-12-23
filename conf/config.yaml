@@ -1,0 +1,70 @@
+cwd: ${hydra:runtime.cwd}
+workers: 4
+num_gpus: 2
+seed: 42
+project_name: Anticipation
+experiment_name: CMFuser
+init_from_model: null
+dataset_root_dir: /home/zhong/Documents/datasets
+primary_metric: val_mt5r_action_all-fused
+dist_backend: nccl
+temporal_context: 10
+
+train:
+  batch_size: 3
+  num_epochs: 50
+  use_mixup: true
+  mixup_backbone: true  # whether to mixup inputs or the backbone outputs
+  mixup_alpha: 0.1  # this value is from vivit: https://github.com/google-research/scenic/blob/main/scenic/projects/vivit/configs/epic_kitchens/vivit_large_factorised_encoder.py
+  label_smoothing:
+    action: 0.4
+    verb: 0.01
+    noun: 0.03
+  modules_to_keep: null
+  loss_wts:
+    # classification for future action
+    cls_action: 1.0
+    cls_verb: 1.0
+    cls_noun: 1.0
+    # classification for updated past action
+    past_cls_action: 1.0
+    past_cls_verb: 1.0
+    past_cls_noun: 1.0
+    # regression for updated past feature
+    past_reg: 1.0
+
+eval:
+  batch_size: 3
+
+model:
+  modal_dims: null #{"rgb": 1024, "objects": 352} # length of this dict corresponds to the number of modalities
+  modal_feature_order: ["rgb", "objects", "audio", "poses", "flow"]
+  common_dim: 1024
+  dropout: 0.2
+
+opt:
+  lr: 0.001 # learning rate
+  wd: 0.000001 # weight decay
+  lr_wd: null  # [[backbone, 0.0001, 0.000001]]  # modules with specific lr and wd
+  grad_clip: null  # by default, no clipping
+  warmup:
+    _target_: common.scheduler.Warmup
+    init_lr_ratio: 0.01 # Warmup from this ratio of the orig LRs
+    num_epochs: 0 # Warmup for this many epochs (will take out of total epochs)
+
+defaults:
+  - dataset@dataset_train: epic_kitchens100/train
+  - dataset@dataset_eval: epic_kitchens100/val
+  - data@data_train: default
+  - data@data_eval: default
+  - dataset/epic_kitchens100/common
+  - dataset/egtea/common
+  - model/common
+  - opt/optimizer: sgd
+  - opt/scheduler: cosine
+  - model/backbone: identity
+  - model/future_predictor: base_future_predictor
+  - model/fuser: cmfuser
+  - model/CMFP: cmfp_early
+  - model/mapping: linear
+  - _self_

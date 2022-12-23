@@ -1,0 +1,14 @@
+# @package dataset.epic_kitchens100.common
+
+version: 0.2
+# RULSTM feats dirs
+rulstm_feats_dir: ${dataset_root_dir}/epickitchens100/features
+annot_dir: ${cwd}/annotations/ek100_ori/
+rulstm_annot_dir: ${cwd}/annotations/ek100_rulstm/
+label_type: action
+sample_strategy: "last_clip"
+tau_a: 1
+tau_o: 10
+compute_dataset_stats: false
+reader_fn: null
+max_els: null

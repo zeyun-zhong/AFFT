@@ -1,0 +1,14 @@
+_target_: models.fusion.ModalTokenCMFuser
+dim: ${model.common.in_features}
+depth: 6
+num_heads: 4
+embd_drop_rate: 0.1
+drop_rate: 0.1
+attn_drop_rate: 0.1
+drop_path_rate: 0.1
+cross_attn: false
+norm_elementwise: true
+modalities: ${model.modal_dims}
+modal_encoding: false
+frame_level_token: false
+temporal_sequence_length: null

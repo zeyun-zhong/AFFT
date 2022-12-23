@@ -1,0 +1,19 @@
+# @package dataset.epic_kitchens100.train
+
+_target_: datasets.epic_kitchens.EPICKitchens
+version: ${dataset.epic_kitchens100.common.version}
+annotation_path:
+  - ${dataset.epic_kitchens100.common.annot_dir}/EPIC_100_test_timestamps.pkl
+annotation_dir: ${dataset.epic_kitchens100.common.annot_dir}
+rulstm_annotation_dir: ${dataset.epic_kitchens100.common.rulstm_annot_dir}  # Needed during computing final outputs to get tail classes etc.
+label_type: ${dataset.epic_kitchens100.common.label_type}
+sample_strategy: ${dataset.epic_kitchens100.common.sample_strategy}
+action_labels_fpath: ${dataset.epic_kitchens100.common.rulstm_annot_dir}/actions.csv
+compute_dataset_stats: ${dataset.epic_kitchens100.common.compute_dataset_stats}
+conv_to_anticipate_fn:
+  _target_: datasets.base_video_dataset.convert_to_anticipation
+  tau_a: ${dataset.epic_kitchens100.common.tau_a}
+  tau_o: ${dataset.epic_kitchens100.common.tau_o}
+  drop_style: correct
+reader_fn: ${dataset.epic_kitchens100.common.reader_fn}
+max_els: ${dataset.epic_kitchens100.common.max_els}

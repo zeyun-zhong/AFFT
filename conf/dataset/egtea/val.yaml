@@ -1,0 +1,19 @@
+# @package dataset.egtea.val
+
+_target_: datasets.epic_kitchens.EPICKitchens
+version: ${dataset.egtea.common.version}
+annotation_path:
+  - ${dataset.egtea.common.annot_dir}/validation${dataset.egtea.common.split}.csv
+annotation_dir: ${dataset.egtea.common.annot_dir}
+rulstm_annotation_dir: ${dataset.egtea.common.rulstm_annot_dir}  # Needed during computing final outputs to get tail classes etc.
+label_type: ${dataset.egtea.common.label_type}
+sample_strategy: ${dataset.egtea.common.sample_strategy}
+action_labels_fpath: ${dataset.egtea.common.rulstm_annot_dir}/actions.csv
+compute_dataset_stats: ${dataset.egtea.common.compute_dataset_stats}
+conv_to_anticipate_fn:
+  _target_: datasets.base_video_dataset.convert_to_anticipation
+  tau_a: ${dataset.egtea.common.tau_a}
+  tau_o: ${dataset.egtea.common.tau_o}
+  drop_style: correct
+reader_fn: ${dataset.egtea.common.reader_fn}
+max_els: ${dataset.egtea.common.max_els}

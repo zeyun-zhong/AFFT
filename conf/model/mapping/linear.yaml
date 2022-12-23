@@ -1,0 +1,3 @@
+_target_: models.feature_mapping.Linear
+use_layernorm: false
+sparse_mapping: true

@@ -1,0 +1,15 @@
+# @package dataset.egtea.common
+
+version: -1
+# RULSTM feats dirs
+rulstm_feats_dir: ${dataset_root_dir}/egtea/features
+annot_dir: ${cwd}/annotations/egtea/
+rulstm_annot_dir: ${cwd}/annotations/egtea/
+label_type: action
+sample_strategy: "last_clip"
+tau_a: 0.5
+tau_o: 10
+split: 1
+compute_dataset_stats: false
+reader_fn: null
+max_els: null

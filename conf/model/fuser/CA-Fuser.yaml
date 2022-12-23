@@ -1,0 +1,8 @@
+_target_: models.fusion.TemporalCrossAttentFuser
+dim: ${model.common.in_features}
+modalities: ${model.modal_dims}
+num_heads: 4
+embd_drop_rate: 0.1
+drop_rate: 0.1
+attn_drop_rate: 0.1
+drop_path_rate: 0.1

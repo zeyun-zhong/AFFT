@@ -1,0 +1,16 @@
+
+# The top few go into the dataset object to load as per these
+num_frames: 10
+frame_rate: 1
+frame_subclips:
+  num_frames: 1
+  stride: 1
+sec_subclips:  # allows to have different sequence of labels than the sequence of frames
+  num_frames: 1
+  stride: 1
+
+# Load segmentation labels only if a classifier on the past is being applied
+load_seg_labels: true
+
+# Augmentation for RULSTM Feats, only for training
+zero_mask_rate: 0.0

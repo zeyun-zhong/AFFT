@@ -1,0 +1,4 @@
+_target_: models.fusion.MATT
+modal_dims: ${model.modal_dims}
+dim: ${model.common.in_features}
+drop_rate: 0.8

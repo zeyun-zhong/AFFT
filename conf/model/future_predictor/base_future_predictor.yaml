@@ -1,0 +1,9 @@
+_target_: models.future_prediction.BaseFuturePredictor
+in_features: ${model.common.in_features}
+inter_dim: ${model.common.fp_inter_dim}
+n_layer: ${model.common.fp_layers}
+n_head: ${model.common.fp_heads}
+output_attentions: ${model.common.fp_output_attentions}
+embd_pdrop: ${model.common.embd_pdrop}
+resid_pdrop: ${model.common.resid_pdrop}
+attn_pdrop: ${model.common.attn_pdrop}

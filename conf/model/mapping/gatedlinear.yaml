@@ -1,0 +1,2 @@
+_target_: models.feature_mapping.GatedLinear
+use_layernorm: true

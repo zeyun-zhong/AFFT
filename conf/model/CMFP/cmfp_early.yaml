@@ -1,0 +1,2 @@
+_target_: models.future_prediction.CMFPEarly
+model_cfg: null
