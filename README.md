@@ -39,7 +39,7 @@ $ conda activate afft
 AFFT works on pre-extracted features, so you will need to download the features first. You can
 download the TSN-features from RULSTM for [EK100](https://github.com/fpv-iplab/rulstm/blob/master/RULSTM/scripts/download_data_ek100_full.sh)
 and for [EGTEA Gaze+](https://iplab.dmi.unict.it/sharing/rulstm/features/egtea.zip).
-The RGB-Swin and audio features will be released soon.
+The RGB-Swin features are available [here](https://cvhci.anthropomatik.kit.edu/~dschneider/epic-kitchens/features/rgb_omnivore.zip) and audio features are available [here](https://cvhci.anthropomatik.kit.edu/~dschneider/epic-kitchens/features/audio.zip).
 
 Please make sure that your data structure follows the structure shown below. Note that 
 `dataset_root_dir` in [config.yaml](conf/config.yaml) should be changed to your specific data path.
