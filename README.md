@@ -6,15 +6,17 @@ our [AFFT](https://arxiv.org/abs/2210.12649) paper.
 If you find our code or paper useful, please consider citing:
 
 Z. Zhong, D. Schneider, M. Voit, R. Stiefelhagen and J. Beyerer. 
-**Anticipative Feature Fusion Transformer for Multi-Modal Action Anticipation.** 
-arXiv preprint arXiv:2210.12649, 2022.
+Anticipative Feature Fusion Transformer for Multi-Modal Action Anticipation. 
+In *WACV*, 2023.
 
 ```bibtex
-@article{zhong2022afft,
-  title={Anticipative Feature Fusion Transformer for Multi-Modal Action Anticipation},
-  author={Zhong, Zeyun and Schneider, David and Voit, Michael and Stiefelhagen, Rainer and Beyerer, J{\"u}rgen},
-  journal={arXiv preprint arXiv:2210.12649},
-  year={2022}
+@InProceedings{Zhong_2023_WACV,
+    author    = {Zhong, Zeyun and Schneider, David and Voit, Michael and Stiefelhagen, Rainer and Beyerer, J\"urgen},
+    title     = {Anticipative Feature Fusion Transformer for Multi-Modal Action Anticipation},
+    booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+    month     = {January},
+    year      = {2023},
+    pages     = {6068-6077}
 }
 ```
 
@@ -79,8 +81,8 @@ and [EGTEA-common](conf/dataset/egtea/common.yaml).
 
 | Dataset | Modalities                                               | Performance <br/> (Actions)                     | Config                                                                                                                                  | Model     |
 |---------|:---------------------------------------------------------|-------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|-----------|
-| EK100   | R-Swin, O, AU, F <br/> R-TSN, O, AU, F <br/> R-TSN, O, F | 18.5 (MT5R) <br/> 17.0 (MT5R) <br/> 16.4 (MT5R) | `expts/01_SA-Fuser_ek100_val_Swin.txt` <br/> `expts/01_SA-Fuser_ek100_val_TSN.txt` <br/> `expts/01_SA-Fuser_ek100_val_TSN_wo_audio.txt` | [link](https://fraunhofer-my.sharepoint.com/:f:/g/personal/zeyun_zhong_iosb_fraunhofer_de/Elr_Rj8NyopLuxIsMsw_nh4BAbhqWwSt3oC6vdRjngx3rw?e=fgvULq) <br/> [link](https://fraunhofer-my.sharepoint.com/:f:/g/personal/zeyun_zhong_iosb_fraunhofer_de/Eur99IeJJepNgRtlx8JVjzgBg2c94kDtb8iQXBpS8lINqg?e=CRgROp) <br/> [link](https://fraunhofer-my.sharepoint.com/:f:/g/personal/zeyun_zhong_iosb_fraunhofer_de/EmpcaPNHINZPvpGDRtHDLksB4UGMnJW99x45la6f_Ke0DA?e=EwBXWV) |
-| EGTEA   | RGB-TSN, Flow                                            | 42.5 (Top-1)                                    | `expts/02_ek100_avt_tsn.txt`                                                                                                            | [link](https://fraunhofer-my.sharepoint.com/:f:/g/personal/zeyun_zhong_iosb_fraunhofer_de/Euw6iM-bGOtAhSq1w4D80KsBnEUIphx85wtYHKicRvFgcA?e=8U3fdF)  |
+| EK100   | R-Swin, O, AU, F <br/> R-TSN, O, AU, F <br/> R-TSN, O, F | 18.5 (MT5R) <br/> 17.0 (MT5R) <br/> 16.4 (MT5R) | `expts/01_SA-Fuser_ek100_val_Swin.txt` <br/> `expts/01_SA-Fuser_ek100_val_TSN.txt` <br/> `expts/01_SA-Fuser_ek100_val_TSN_wo_audio.txt` | [link](https://bwsyncandshare.kit.edu/s/C2xLnk3H8WXgMbW) <br/> [link](https://bwsyncandshare.kit.edu/s/M97peiEnjsW2Qji) <br/> [link](https://bwsyncandshare.kit.edu/s/gZgH8gFJd4MFegR) |
+| EGTEA   | RGB-TSN, Flow                                            | 42.5 (Top-1)                                    | `expts/02_ek100_avt_tsn.txt`                                                                                                            | [link](https://bwsyncandshare.kit.edu/s/iXySQLxqZTdH4qB)  |
 
 
 ## Training
