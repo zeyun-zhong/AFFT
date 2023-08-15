@@ -64,7 +64,7 @@ defaults:
   - opt/scheduler: cosine
   - model/backbone: identity
   - model/future_predictor: base_future_predictor
-  - model/fuser: cmfuser
+  - model/fuser: SA-Fuser
   - model/CMFP: cmfp_early
   - model/mapping: linear
   - _self_
