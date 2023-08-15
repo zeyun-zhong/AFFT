@@ -10,7 +10,7 @@ model.common_dim=1024
 model.dropout=0.2
 model.common.backbones={rgb:{_target_:torch.nn.Identity},objects:{_target_:torch.nn.Identity},flow:{_target_:torch.nn.Identity}}
 model/future_predictor=base_future_predictor
-model/fuser=mtcmfuser
+model/fuser=SA-Fuser
 model/CMFP=cmfp_early
 model/mapping=linear
 
